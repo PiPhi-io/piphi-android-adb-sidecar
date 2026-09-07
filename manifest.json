@@ -2,9 +2,9 @@
   "$schema": "./schema/piphi-manifest.schema.json",
   "manifest_version": "1.0",
   "id": "piphi-android-adb-sidecar",
-  "name": "Piphi Android Adb Sidecar",
+  "name": "Android ADB sidecar",
   "version": "0.1.0",
-  "description": "Managed Android Debug Bridge transport sidecar for PiPhi integrations, with allow-listed device operations and bounded command delivery.",
+  "description": "Provide managed, allow-listed ADB transport for Android integrations.",
   "metadata": {
     "generator": "piphi-network-create",
     "scaffold_version": "0.3.0",
@@ -132,5 +132,76 @@
         "default_widget": "tile"
       }
     }
-  ]
+  ],
+  "marketplace": {
+    "metadata_version": 2,
+    "display_name": "Android ADB sidecar",
+    "summary": "Provide managed, allow-listed ADB transport for Android integrations.",
+    "category": "networking",
+    "regions": [
+      "WW"
+    ],
+    "languages": [
+      "en"
+    ],
+    "publisher": {
+      "name": "PiPhi Network",
+      "website_url": "https://piphi.io",
+      "support_url": "https://github.com/PiPhi-io/piphi-android-adb-sidecar/issues",
+      "security_contact": "support@piphi.io"
+    },
+    "access": [
+      {
+        "id": "local_network",
+        "label": "Local network access",
+        "reason": "Discovers or communicates with supported services and devices on the homeowner's local network.",
+        "required": true
+      },
+      {
+        "id": "device_access",
+        "label": "USB device access",
+        "reason": "Uses the explicitly configured host device to communicate with supported hardware.",
+        "required": true
+      },
+      {
+        "id": "sidecar_runtime",
+        "label": "Managed sidecar runtime",
+        "reason": "Runs as an isolated helper service consumed by a parent PiPhi integration.",
+        "required": true
+      }
+    ],
+    "compatibility": [
+      {
+        "brand": "Google and Amazon",
+        "model": "ADB-compatible Android TV, Google TV, and Fire TV devices"
+      }
+    ],
+    "documentation_url": "https://github.com/PiPhi-io/piphi-android-adb-sidecar",
+    "support_url": "https://github.com/PiPhi-io/piphi-android-adb-sidecar/issues",
+    "changelog_url": "https://github.com/PiPhi-io/piphi-android-adb-sidecar/releases",
+    "quality_tier": "unrated",
+    "governance": {
+      "schema_version": 1,
+      "publication_status": "draft",
+      "rollout_percent": 0,
+      "lifecycle_status": "active",
+      "qualification": {
+        "status": "unverified"
+      }
+    },
+    "device_types": [
+      "Android platform service"
+    ],
+    "protocols": [
+      "ADB",
+      "USB",
+      "TCP"
+    ],
+    "discovery_methods": [
+      "manual",
+      "ADB device discovery"
+    ],
+    "connectivity": "local",
+    "offline_support": "full"
+  }
 }
