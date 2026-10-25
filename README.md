@@ -55,6 +55,6 @@ The runtime listens on port `4213` by default and exposes the common PiPhi runti
 ## Docker
 
 ```bash
-docker build -t docker.io/piphinetwork/piphi-android-adb-sidecar:0.1.0 .
-docker run --rm -p 4213:4213 docker.io/piphinetwork/piphi-android-adb-sidecar:0.1.0
+docker build -t docker.io/piphinetwork/piphi-android-adb-sidecar:0.1.1 .
+docker run --rm -p 4213:4213 docker.io/piphinetwork/piphi-android-adb-sidecar:0.1.1
 ```
