@@ -3,7 +3,7 @@
   "manifest_version": "1.0",
   "id": "piphi-android-adb-sidecar",
   "name": "Android ADB sidecar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Provide managed, allow-listed ADB transport for Android integrations.",
   "metadata": {
     "generator": "piphi-network-create",
@@ -17,7 +17,7 @@
     "website": "https://piphi.io"
   },
   "license": "Apache-2.0",
-  "image": "docker.io/piphinetwork/piphi-android-adb-sidecar:0.1.0",
+  "image": "docker.io/piphinetwork/piphi-android-adb-sidecar:0.1.1",
   "platforms": [
     "linux"
   ],
@@ -25,11 +25,10 @@
     "linux": {
       "type": "container",
       "container": {
-        "image": "docker.io/piphinetwork/piphi-android-adb-sidecar:0.1.0",
+        "image": "docker.io/piphinetwork/piphi-android-adb-sidecar:0.1.1",
         "ports": [
           {
-            "container": 4213,
-            "host": 4213
+            "container": 4213
           }
         ],
         "environment": {
@@ -206,5 +205,10 @@
   },
   "onboarding": {
     "mode": "service"
+  },
+  "runtime_contract": {
+    "version": 1,
+    "port_binding": "core_allocated",
+    "port_env": "PORT"
   }
 }

@@ -4,4 +4,4 @@ COPY pyproject.toml ./
 COPY src ./src
 RUN pip install --no-cache-dir .
 EXPOSE 4213
-CMD ["uvicorn", "piphi_android_adb_sidecar.main:app", "--host", "0.0.0.0", "--port", "4213"]
+CMD ["python", "-m", "piphi_android_adb_sidecar.main"]
